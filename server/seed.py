@@ -8,7 +8,7 @@ from app import app
 from models import db, Zookeeper, Animal, Enclosure
 
 fake = Faker()
-
+print("🌱 Seeding DB...")
 with app.app_context():
 
     Animal.query.delete()
@@ -47,4 +47,4 @@ with app.app_context():
 
     db.session.add_all(animals)
     db.session.commit()
-
+print("✅ Done seeding!")
